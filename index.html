@@ -2,17 +2,65 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>自己紹介カード</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Hinoki's Profile Card</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="card">
-    <h1>美唄 太郎</h1>
-    <p class="job">会社員</p>
-    <p class="message">美唄の焼き鳥が大好きです！</p>
-    <button id="change-btn">ひとこと変更</button>
-  </div>
+  <main class="page-container">
+    <section class="profile-card">
+      <div class="card-decoration decoration-one"></div>
+      <div class="card-decoration decoration-two"></div>
+
+      <div class="profile-icon" aria-hidden="true">
+        H
+      </div>
+
+      <p class="welcome-text">
+        WELCOME TO MY PROFILE
+      </p>
+
+      <h1>Kaz941  Hayakawa</h1>
+
+      <p class="job">
+        Web制作・プログラミング学習中
+      </p>
+
+      <div class="location">
+        <span class="location-icon">⌖</span>
+        <span>Hokkaido, Japan</span>
+      </div>
+
+      <div class="message-box">
+        <p id="message" class="message">
+          英語とWeb制作を楽しく学んでいます。
+        </p>
+      </div>
+
+      <button id="change-btn" type="button">
+        次のメッセージを見る
+      </button>
+
+      <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>English</span>
+      </div>
+
+      <p class="footer-message">
+        Learning something new every day.
+      </p>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>

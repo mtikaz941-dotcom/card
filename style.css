@@ -1,50 +1,351 @@
+/* =========================
+   基本設定
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    font-family: sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    "Meiryo",
+    sans-serif;
+  color: #324054;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(255, 255, 255, 0.75) 0,
+      rgba(255, 255, 255, 0) 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(215, 197, 236, 0.55) 0,
+      rgba(215, 197, 236, 0) 30%
+    ),
+    linear-gradient(
+      135deg,
+      #d9f1f1 0%,
+      #e7f4e5 48%,
+      #eee5f6 100%
+    );
+}
+
+
+/* =========================
+   ページ全体
+========================= */
+
+.page-container {
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* =========================
+   プロフィールカード
+========================= */
+
+.profile-card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: 48px 42px 38px;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 32px;
+  box-shadow:
+    0 25px 60px rgba(67, 87, 100, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+
+/* =========================
+   背景の丸い装飾
+========================= */
+
+.card-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.decoration-one {
+  top: -65px;
+  right: -55px;
+  width: 170px;
+  height: 170px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 204, 199, 0.4),
+    rgba(166, 214, 186, 0.16)
+  );
+}
+
+.decoration-two {
+  bottom: -75px;
+  left: -65px;
+  width: 185px;
+  height: 185px;
+  background: linear-gradient(
+    135deg,
+    rgba(203, 180, 227, 0.3),
+    rgba(228, 204, 225, 0.12)
+  );
+}
+
+
+/* =========================
+   プロフィールアイコン
+========================= */
+
+.profile-icon {
+  position: relative;
+  z-index: 1;
+  width: 94px;
+  height: 94px;
+  margin: 0 auto 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 42px;
+  font-weight: bold;
+  background: linear-gradient(
+    135deg,
+    #66aaa5,
+    #8fae7a 55%,
+    #a38cbe
+  );
+  border: 6px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  box-shadow: 0 12px 28px rgba(88, 129, 128, 0.25);
+}
+
+
+/* =========================
+   見出し
+========================= */
+
+.welcome-text {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 10px;
+  color: #78928d;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.22em;
+}
+
+h1 {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #334758;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 34px;
+  line-height: 1.3;
+}
+
+.job {
+  position: relative;
+  z-index: 1;
+  margin: 10px 0 8px;
+  color: #72808d;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   居住地
+========================= */
+
+.location {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  color: #8b97a0;
+  font-size: 13px;
+}
+
+.location-icon {
+  color: #6fa49c;
+  font-size: 18px;
+}
+
+
+/* =========================
+   メッセージ
+========================= */
+
+.message-box {
+  position: relative;
+  z-index: 1;
+  min-height: 112px;
+  padding: 24px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(232, 247, 244, 0.9),
+      rgba(244, 239, 249, 0.9)
+    );
+  border: 1px solid #dce9e5;
+  border-radius: 22px;
+}
+
+.message {
+  margin: 0;
+  color: #405568;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.8;
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+}
+
+.message.change {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+
+/* =========================
+   ボタン
+========================= */
+
+button {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px 24px;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  background: linear-gradient(
+    135deg,
+    #5faaa4,
+    #7fa878,
+    #927daf
+  );
+  border: none;
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(92, 145, 139, 0.25);
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    opacity 0.2s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(92, 145, 139, 0.33);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(105, 168, 161, 0.35);
+  outline-offset: 4px;
+}
+
+
+/* =========================
+   スキル表示
+========================= */
+
+.skills {
+  position: relative;
+  z-index: 1;
+  margin-top: 27px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.skills span {
+  padding: 7px 13px;
+  color: #657982;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #f1f7f5;
+  border: 1px solid #dbe9e5;
+  border-radius: 20px;
+}
+
+
+/* =========================
+   フッター
+========================= */
+
+.footer-message {
+  position: relative;
+  z-index: 1;
+  margin: 28px 0 0;
+  color: #9aa5ac;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.06em;
+}
+
+
+/* =========================
+   スマートフォン対応
+========================= */
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 24px 14px;
   }
-  
-  .card {
-    background-color: #ffffff;
-    border-radius: 16px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 360px;
+
+  .profile-card {
+    padding: 38px 24px 32px;
+    border-radius: 26px;
   }
-  
+
+  .profile-icon {
+    width: 82px;
+    height: 82px;
+    font-size: 36px;
+  }
+
   h1 {
-    color: #2d3748;
-    margin-bottom: 4px;
+    font-size: 28px;
   }
-  
-  .job {
-    color: #718096;
-    font-size: 14px;
-    margin-top: 0;
+
+  .message-box {
+    min-height: 120px;
+    padding: 21px 18px;
   }
-  
+
   .message {
-    color: #2d3748;
-    font-size: 18px;
-    margin: 24px 0;
-    min-height: 54px;
-  }
-  
-  button {
-    background-color: #4299e1;
-    color: #ffffff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 24px;
     font-size: 16px;
-    cursor: pointer;
   }
-  
-  button:hover {
-    background-color: #3182ce;
-  }
+}
